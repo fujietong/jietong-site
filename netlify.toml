@@ -1,0 +1,18 @@
+[build]
+  # Directory to publish to Netlify. This matches the folder containing the site
+  # HTML, CSS and JS files. Adjust this if your publish directory differs.
+  publish = "website"
+  # Directory for Netlify Functions. Our SendGrid function resides here.
+  functions = "netlify/functions"
+
+  # If you have any build command (for example, running a static site generator),
+  # specify it here. This site is plain HTML/CSS, so no build command is needed.
+  # command = ""
+
+# Optionally, you can define your environment variables here if you prefer to
+# commit them to version control. It’s often safer to set these in the
+# Netlify dashboard instead.
+# [context.production.environment]
+#   SENDGRID_API_KEY = "your-sendgrid-api-key"
+#   TO_EMAIL = "jietong.fu@gmail.com"
+#   FROM_EMAIL = "no-reply@your-domain.com"
