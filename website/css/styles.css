@@ -115,6 +115,56 @@ a:hover {
   color: var(--colour-accent);
 }
 
+/* Social links and language toggle styles */
+/* Layout for social links and language toggle containers */
+.navbar .social-links,
+.navbar .lang-toggle {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+/* Social link anchors contain only an icon image or FontAwesome icon. */
+.navbar .social-links a {
+  color: var(--colour-muted);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+/* FontAwesome icons inside social links */
+.navbar .social-links a i {
+  font-size: 1.1rem;
+}
+
+/* Image icons (e.g., Xiaohongshu) */
+.navbar .social-links a img {
+  height: 1.1rem;
+  width: auto;
+  display: block;
+}
+
+/* Hover state for social links */
+.navbar .social-links a:hover {
+  color: var(--colour-accent);
+}
+
+/* Language toggle anchors retain original typography settings */
+.navbar .lang-toggle a {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--colour-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar .lang-toggle a:hover {
+  color: var(--colour-accent);
+}
+
 /* Hamburger for mobile */
 .navbar .hamburger {
   display: none;
