@@ -72,55 +72,8 @@
     <section id="videos">
       <div class="container">
         <h2 class="section-title">演出视频</h2>
-        <div class="shows-list">
-          <div class="show-card">
-            <h3>Una furtiva lagrima</h3>
-            <iframe
-              width="100%"
-              height="200"
-              src="https://www.youtube.com/embed/g7gorh1vmCI"
-              title="Una furtiva lagrima"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="show-card">
-            <h3>Com&rsquo;&egrave; gentil</h3>
-            <iframe
-              width="100%"
-              height="200"
-              src="https://www.youtube.com/embed/ilMlZ0J1U_0"
-              title="Com'e gentil"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="show-card">
-            <h3>Outside this House</h3>
-            <iframe
-              width="100%"
-              height="200"
-              src="https://www.youtube.com/embed/ZWkxfYz-vXU"
-              title="Outside this House"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="show-card">
-            <h3>&#28023;&#24651;（Love of the Sea）</h3>
-            <iframe
-              width="100%"
-              height="200"
-              src="https://www.youtube.com/embed/5wfwJIvlATk"
-              title="海恋"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
+        <div class="shows-list" id="video-list">
+          <!-- Videos loaded dynamically -->
         </div>
       </div>
     </section>
@@ -131,5 +84,26 @@
     </footer>
 
     <script src="js/scripts.js"></script>
+    <script>
+      fetch('data/cn/videos.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('video-list');
+          data.videos.forEach(v => {
+            const id = v.url.includes('youtu.be/')
+              ? v.url.split('youtu.be/')[1].split('?')[0]
+              : v.url.split('v=')[1].split('&')[0];
+            container.innerHTML += `
+              <div class="show-card">
+                <h3>${v.title}</h3>
+                <iframe width="100%" height="200"
+                  src="https://www.youtube.com/embed/${id}"
+                  title="${v.title}" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>`;
+          });
+        });
+    </script>
   </body>
 </html>

@@ -44,110 +44,19 @@
     <section id="upcoming-events">
       <div class="container">
         <h2 class="section-title">近期活动</h2>
-        <div class="shows-list">
-          <div class="show-card">
-            <h3>皮博迪歌剧院：意大利歌剧之夜</h3>
-            <p>
-              参加皮博迪歌剧院的意大利歌剧之夜。傅博士将饰演普契尼
-              《波希米亚人》中的鲁道夫和威尔第《茶花女》中的阿尔弗雷多。
-            </p>
-          </div>
+        <div class="shows-list" id="upcoming-list">
+          <!-- Loaded dynamically -->
         </div>
-      </div>
+    </div>
     </section>
 
     <section id="past-events">
       <div class="container">
         <h2 class="section-title">过往演出</h2>
-        <div class="shows-list">
-          <!-- Added from 近期活动 -->
-          <div class="show-card">
-            <h3>教堂弥赛亚音乐会</h3>
-            <p>
-              观看傅博士在亨德尔永恒的《弥赛亚》中担任男高音独唱。
-            </p>
-            <p>
-              日期：2025年12月7日<br />
-              时间：下午3点<br />
-              地点：弗吉尼亚州斯普林菲尔德弥赛亚联合卫理公会教堂
-            </p>
-          </div>
-          <div class="show-card">
-            <h3>波特兰歌剧巡演：《爱的灵药》</h3>
-            <p>
-              傅博士在波特兰歌剧巡演中饰演多尼采蒂迷人喜歌剧《爱的灵药》中的男主角内莫里诺。
-            </p>
-            <a href="https://www.portlandopera.org/performances-tickets/25-26-season/portland-opera-to-go-the-elixir-of-love/"
-              target="_blank"
-              >详情及购票</a
-            >
-          </div>
-          <div class="show-card">
-            <h3>男高音独唱 – 亨德尔《弥赛亚》</h3>
-            <p>弗吉尼亚州斯普林菲尔德弥赛亚联合卫理公会教堂</p>
-          </div>
-          <div class="show-card">
-            <h3>独唱 – 2023年新年晚会</h3>
-            <p>华盛顿地区中国校友会联合会主办</p>
-          </div>
-          <div class="show-card">
-            <h3>二重唱演出 – 青年音乐家音乐会</h3>
-            <p>肯尼迪中心千禧舞台亚洲美国音乐协会</p>
-          </div>
-          <div class="show-card">
-            <h3>二重唱演出 – 2023年春节晚会</h3>
-            <p>美华协会联合会主办</p>
-          </div>
-          <div class="show-card">
-            <h3>男高音独唱 – 莫扎特《安魂曲》K.626</h3>
-            <p>NEXT Ensemble、皮博迪室内乐团与皮博迪霍普金斯管弦乐团</p>
-          </div>
-          <div class="show-card">
-            <h3>高级演奏文凭独奏音乐会</h3>
-            <p>GPD 独奏音乐会</p>
-          </div>
-          <div class="show-card">
-            <h3>歌剧习作演出</h3>
-            <p>歌剧习作演出</p>
-          </div>
-          <div class="show-card">
-            <h3>独唱 – 歌剧之夜</h3>
-            <p>弗吉尼亚州斯普林菲尔德弥赛亚联合卫理公会教堂制作</p>
-          </div>
-          <div class="show-card">
-            <h3>试演 – 2023年丹尼丝·格雷夫斯基金会研讨会</h3>
-            <p>受邀参加试演</p>
-          </div>
-          <div class="show-card">
-            <h3>普鲁涅 – 普契尼《燕子》</h3>
-            <p>歌剧工作坊演出</p>
-          </div>
-          <div class="show-card">
-            <h3>阿尔弗雷德 – 《蝙蝠》</h3>
-            <p>皮博迪歌剧院</p>
-          </div>
-          <div class="show-card">
-            <h3>塔米诺 – 《魔笛》</h3>
-            <p>Loudoun Lyric Opera</p>
-          </div>
-          <div class="show-card">
-            <h3>龟五郎 – 《静江：一个美国的故事》</h3>
-            <p>波特兰歌剧（作曲：Kenji Oh）</p>
-          </div>
-          <div class="show-card">
-            <h3>独唱 – 2025年元宵节晚会</h3>
-            <p>美华协会联合会主办</p>
-          </div>
-          <div class="show-card">
-            <h3>歌者兼管风琴 – 生日快乐施特劳斯：圆舞曲之王</h3>
-            <p>Bel Cantanti Opera 制作的歌剧音乐会</p>
-          </div>
-          <div class="show-card">
-            <h3>男高音独唱 – 拉赫玛尼诺夫《晚祷》Op.&nbsp;37</h3>
-            <p>华盛顿大师合唱团</p>
-          </div>
+        <div class="shows-list" id="past-list">
+          <!-- Loaded dynamically -->
         </div>
-      </div>
+    </div>
     </section>
 
     <!-- Footer -->
@@ -156,5 +65,48 @@
     </footer>
 
     <script src="js/scripts.js"></script>
+    <script>
+      // Upcoming events
+      fetch('data/cn/events-upcoming.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('upcoming-list');
+          if (!data.events || data.events.length === 0) {
+            container.innerHTML = '<p style="color:#888;">Stay tuned for upcoming performances.</p>';
+            return;
+          }
+          data.events.forEach(e => {
+            let html = `<div class="show-card"><h3>${e.title}</h3>`;
+            if (e.description) html += `<p>${e.description}</p>`;
+            if (e.date || e.time || e.venue) {
+              html += '<p>';
+              if (e.date) html += `Date: ${e.date}<br/>`;
+              if (e.time) html += `Time: ${e.time}<br/>`;
+              if (e.venue) html += `Venue: ${e.venue}`;
+              html += '</p>';
+            }
+            if (e.link) html += `<a href="${e.link}" target="_blank">Details &amp; Tickets</a>`;
+            html += '</div>';
+            container.innerHTML += html;
+          });
+        });
+
+      // Past events
+      fetch('data/cn/events-past.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('past-list');
+          data.events.forEach(e => {
+            let html = `<div class="show-card"><h3>${e.title}</h3>`;
+            let meta = [];
+            if (e.year) meta.push(e.year);
+            if (e.venue) meta.push(e.venue);
+            if (meta.length) html += `<p>${meta.join(' · ')}</p>`;
+            if (e.link) html += `<a href="${e.link}" target="_blank">Details</a>`;
+            html += '</div>';
+            container.innerHTML += html;
+          });
+        });
+    </script>
   </body>
 </html>

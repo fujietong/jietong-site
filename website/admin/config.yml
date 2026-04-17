@@ -1,0 +1,128 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: website/assets/images
+public_folder: assets/images
+
+locale: zh
+
+collections:
+  # ─── ENGLISH CONTENT ───────────────────────────────────────────
+  - name: en_bio
+    label: "Bio (English)"
+    label_singular: "Bio (English)"
+    files:
+      - name: bio
+        label: "About / Bio"
+        file: website/data/en/bio.json
+        fields:
+          - { label: "Paragraph 1", name: p1, widget: text }
+          - { label: "Paragraph 2", name: p2, widget: text }
+          - { label: "Paragraph 3 (Concert)", name: p3, widget: text }
+          - { label: "Paragraph 4 (Teaching)", name: p4, widget: text }
+          - { label: "Paragraph 5 (Degrees)", name: p5, widget: text }
+
+  - name: en_videos
+    label: "Videos (English)"
+    files:
+      - name: videos
+        label: "Performance Videos"
+        file: website/data/en/videos.json
+        fields:
+          - label: Videos
+            name: videos
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: "YouTube URL (full URL)", name: url, widget: string, hint: "e.g. https://youtu.be/g7gorh1vmCI" }
+
+  - name: en_events
+    label: "Events (English)"
+    files:
+      - name: upcoming
+        label: "Upcoming Events"
+        file: website/data/en/events-upcoming.json
+        fields:
+          - label: Events
+            name: events
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text, required: false }
+              - { label: Date, name: date, widget: string, required: false, hint: "e.g. December 7, 2025" }
+              - { label: Time, name: time, widget: string, required: false }
+              - { label: Venue, name: venue, widget: string, required: false }
+              - { label: "Ticket/Details Link", name: link, widget: string, required: false }
+
+      - name: past
+        label: "Past Performances"
+        file: website/data/en/events-past.json
+        fields:
+          - label: Performances
+            name: events
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Year, name: year, widget: string, required: false }
+              - { label: Venue / Organization, name: venue, widget: string, required: false }
+              - { label: "Details Link", name: link, widget: string, required: false }
+
+  # ─── CHINESE CONTENT ───────────────────────────────────────────
+  - name: cn_bio
+    label: "简介（中文）"
+    files:
+      - name: bio
+        label: "关于我 / 简介"
+        file: website/data/cn/bio.json
+        fields:
+          - { label: "第一段", name: p1, widget: text }
+          - { label: "第二段", name: p2, widget: text }
+          - { label: "第三段（音乐会）", name: p3, widget: text }
+          - { label: "第四段（教学）", name: p4, widget: text }
+          - { label: "第五段（学历）", name: p5, widget: text }
+
+  - name: cn_videos
+    label: "视频（中文）"
+    files:
+      - name: videos
+        label: "演出视频"
+        file: website/data/cn/videos.json
+        fields:
+          - label: 视频
+            name: videos
+            widget: list
+            fields:
+              - { label: 标题, name: title, widget: string }
+              - { label: "YouTube 链接（完整地址）", name: url, widget: string, hint: "例：https://youtu.be/g7gorh1vmCI" }
+
+  - name: cn_events
+    label: "活动（中文）"
+    files:
+      - name: upcoming
+        label: "即将到来的活动"
+        file: website/data/cn/events-upcoming.json
+        fields:
+          - label: 活动
+            name: events
+            widget: list
+            fields:
+              - { label: 标题, name: title, widget: string }
+              - { label: 简介, name: description, widget: text, required: false }
+              - { label: 日期, name: date, widget: string, required: false }
+              - { label: 时间, name: time, widget: string, required: false }
+              - { label: 场馆, name: venue, widget: string, required: false }
+              - { label: "票务/详情链接", name: link, widget: string, required: false }
+
+      - name: past
+        label: "往期演出"
+        file: website/data/cn/events-past.json
+        fields:
+          - label: 演出
+            name: events
+            widget: list
+            fields:
+              - { label: 标题, name: title, widget: string }
+              - { label: 年份, name: year, widget: string, required: false }
+              - { label: 场馆 / 主办方, name: venue, widget: string, required: false }
+              - { label: 详情链接, name: link, widget: string, required: false }
