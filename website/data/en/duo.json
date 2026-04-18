@@ -1,25 +1,13 @@
 {
-  "intro_title": "Our Duo",
-  "intro_text": "Welcome to our Duo page! We are Dr. Jietong Fu, tenor, and Dr. Xin Wu, pianist, a husband-and-wife team specializing in opera, art song, and collaborative performance. Together, we bring poetry, passion, and artistry to every stage. We are available for concerts, recitals, masterclasses, and special events.",
-  "pianist_section_title": "Meet Pianist – Dr. Xin Wu",
+  "booking_link": "contact.html",
   "pianist_image": "assets/images/xin_wu.jpeg",
-  "pianist_image_alt": "Dr. Xin Wu portrait",
-  "pianist_subtitle": "Collaborative Pianist | Vocal Coach",
   "pianist_paragraphs": [
     "Dr. Xin Wu is a collaborative pianist and vocal coach specializing in opera and vocal repertoire. Based in the Baltimore–Washington, D.C. area, she maintains an active career working with singers across a wide range of artistic and professional settings.",
     "She is a staff pianist at the Peabody Conservatory and serves as an accompanist and vocal coach at Morgan State University. She also works as a vocal coach at the Peabody Preparatory and collaborates regularly with Maryland Opera.",
     "Dr. Wu has collaborated on a broad range of operatic productions and concert projects, working closely with singers in both rehearsal and performance. She is regularly engaged as a collaborative pianist for major vocal competitions, including the Metropolitan Opera Laffont Competition, NATS, and other leading national and international competitions.",
     "As a collaborative artist, Dr. Wu is particularly interested in the relationship between voice and piano, bringing clarity, sensitivity, and stylistic awareness to her work with singers. Her performances have taken her to venues across the United States, China, and Europe. She is also a recording artist, and her recent album, The Forgotten Genius of Josephine Lang (with The Cecilia Collective), reflects her commitment to exploring and presenting underrepresented repertoire."
   ],
-  "programs_title": "Our Programs",
-  "programs": [
-    "Themed recital programs",
-    "Opera gala performances",
-    "Educational outreach concerts",
-    "Lecture-recitals on Chinese art song and Western vocal repertoire",
-    "Masterclasses in voice, diction, and collaborative performance"
-  ],
-  "featured_title": "Featured Programs",
+  "intro_text": "Tenor Dr. Jietong Fu and collaborative pianist Dr. Xin Wu share a musical partnership rooted in the intimate dialogue between voice and piano. Their work explores the expressive potential of text, line, and color, bringing a refined and communicative approach to repertoire spanning bel canto, art song, and cross-cultural works. Together, they craft performances that emphasize nuance, narrative, and artistic connection.",
   "featured_programs": [
     {
       "title": "A Tapestry of Emotions",
@@ -30,8 +18,20 @@
       "description": "This program presents a rich tapestry of Chinese art songs, all set to the timeless words of classical Chinese poetry. The selections span a wide range of musical styles — from ancient melodies and traditional settings, to works by modern and contemporary composers, as well as neo-classical creations and popular adaptations. Together, they offer a journey through centuries of poetic expression, reimagined through music."
     }
   ],
+  "pianist_section_title": "Meet Pianist – Dr. Xin Wu",
+  "intro_title": "Our Duo",
+  "featured_title": "Featured Programs",
+  "programs_title": "Our Programs",
+  "pianist_image_alt": "Dr. Xin Wu portrait",
+  "programs": [
+    "Themed recital programs",
+    "Opera gala performances",
+    "Educational outreach concerts",
+    "Lecture-recitals on Chinese art song and Western vocal repertoire",
+    "Masterclasses in voice, diction, and collaborative performance"
+  ],
   "booking_title": "Book Us",
   "booking_text": "We welcome inquiries for performances, masterclasses, and collaborative projects in the U.S. and internationally.",
-  "booking_link_label": "Contact us",
-  "booking_link": "contact.html"
+  "pianist_subtitle": "Collaborative Pianist | Vocal Coach",
+  "booking_link_label": "Contact us"
 }
