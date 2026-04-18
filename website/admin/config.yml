@@ -2,40 +2,203 @@ backend:
   name: git-gateway
   branch: main
 
+publish_mode: editorial_workflow
+local_backend: true
+locale: zh
+
 media_folder: website/assets/images
 public_folder: assets/images
 
-locale: zh
-
 collections:
-  # ─── ENGLISH CONTENT ───────────────────────────────────────────
+  - name: en_site
+    label: "Site Settings (English)"
+    files:
+      - name: site
+        label: "Shared Site Content"
+        file: website/data/en/site.json
+        fields:
+          - { label: Brand Name, name: brand_name, widget: string }
+          - { label: Footer Name, name: footer_name, widget: string }
+          - { label: Start Year, name: year_start, widget: string, required: false }
+          - label: Social Links
+            name: social_links
+            widget: list
+            fields:
+              - { label: Platform, name: platform, widget: select, options: [facebook, instagram, tiktok, youtube, douyin, xiaohongshu] }
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+          - label: Home Page
+            name: home
+            widget: object
+            fields:
+              - { label: Hero Image, name: hero_image, widget: image }
+              - { label: Hero Title, name: hero_title, widget: string }
+              - { label: Hero Subtitle, name: hero_subtitle, widget: string }
+              - { label: About Section Title, name: section_title, widget: string }
+              - { label: About Portrait, name: portrait_image, widget: image }
+              - { label: Portrait Alt Text, name: portrait_alt, widget: string }
+              - { label: Resume Button Label, name: resume_label, widget: string }
+              - { label: Resume File Path, name: resume_file, widget: string }
+              - { label: Teaching Button Label, name: teaching_label, widget: string }
+              - { label: Teaching File Path, name: teaching_file, widget: string }
+          - label: Gallery Page
+            name: gallery
+            widget: object
+            fields:
+              - { label: Photo Section Title, name: section_title, widget: string }
+              - { label: Video Section Title, name: video_section_title, widget: string }
+          - label: Events Page
+            name: events
+            widget: object
+            fields:
+              - { label: Upcoming Section Title, name: upcoming_title, widget: string }
+              - { label: Past Section Title, name: past_title, widget: string }
+              - { label: Empty State Message, name: empty_message, widget: string }
+              - { label: Details Button Label, name: details_label, widget: string }
+              - { label: Date Label, name: date_label, widget: string }
+              - { label: Time Label, name: time_label, widget: string }
+              - { label: Venue Label, name: venue_label, widget: string }
+          - label: Contact Page
+            name: contact
+            widget: object
+            fields:
+              - { label: Section Title, name: section_title, widget: string }
+              - { label: Intro Text, name: intro, widget: text }
+              - { label: Email Label, name: email_label, widget: string }
+              - { label: Email Address, name: email, widget: string }
+              - { label: Phone Label, name: phone_label, widget: string }
+              - { label: Display Phone, name: phone, widget: string }
+              - { label: Phone Link, name: phone_link, widget: string }
+              - { label: Name Label, name: form_name_label, widget: string }
+              - { label: Name Placeholder, name: form_name_placeholder, widget: string }
+              - { label: Email Label (Form), name: form_email_label, widget: string }
+              - { label: Email Placeholder, name: form_email_placeholder, widget: string }
+              - { label: Service Label, name: form_service_label, widget: string }
+              - { label: Message Label, name: form_message_label, widget: string }
+              - { label: Message Placeholder, name: form_message_placeholder, widget: string }
+              - { label: Submit Button Label, name: submit_label, widget: string }
+              - { label: Honeypot Text, name: honeypot_label, widget: string }
+              - label: Inquiry Types
+                name: services
+                widget: list
+                fields:
+                  - { label: Value, name: value, widget: string }
+                  - { label: Label, name: label, widget: string }
+          - label: Success Page
+            name: success
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Message 1, name: message_1, widget: text }
+              - { label: Home Link Label, name: home_link_label, widget: string }
+
+  - name: cn_site
+    label: "站点设置（中文）"
+    files:
+      - name: site
+        label: "全站共用内容"
+        file: website/data/cn/site.json
+        fields:
+          - { label: 站点名称, name: brand_name, widget: string }
+          - { label: 页脚名称, name: footer_name, widget: string }
+          - { label: 起始年份, name: year_start, widget: string, required: false }
+          - label: 社交链接
+            name: social_links
+            widget: list
+            fields:
+              - { label: 平台, name: platform, widget: select, options: [douyin, xiaohongshu, facebook, instagram, tiktok, youtube] }
+              - { label: 名称, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+          - label: 首页
+            name: home
+            widget: object
+            fields:
+              - { label: Hero 图片, name: hero_image, widget: image }
+              - { label: Hero 标题, name: hero_title, widget: string }
+              - { label: Hero 副标题, name: hero_subtitle, widget: string }
+              - { label: 关于我标题, name: section_title, widget: string }
+              - { label: 个人照片, name: portrait_image, widget: image }
+              - { label: 图片替代文字, name: portrait_alt, widget: string }
+              - { label: 简历按钮文字, name: resume_label, widget: string }
+              - { label: 简历文件路径, name: resume_file, widget: string }
+              - { label: 教学理念按钮文字, name: teaching_label, widget: string }
+              - { label: 教学理念文件路径, name: teaching_file, widget: string }
+          - label: 视听页面
+            name: gallery
+            widget: object
+            fields:
+              - { label: 图片区标题, name: section_title, widget: string }
+              - { label: 视频区标题, name: video_section_title, widget: string }
+          - label: 活动页面
+            name: events
+            widget: object
+            fields:
+              - { label: 即将到来标题, name: upcoming_title, widget: string }
+              - { label: 往期标题, name: past_title, widget: string }
+              - { label: 空白提示, name: empty_message, widget: string }
+              - { label: 详情按钮文字, name: details_label, widget: string }
+              - { label: 日期标签, name: date_label, widget: string }
+              - { label: 时间标签, name: time_label, widget: string }
+              - { label: 场馆标签, name: venue_label, widget: string }
+          - label: 联系页面
+            name: contact
+            widget: object
+            fields:
+              - { label: 标题, name: section_title, widget: string }
+              - { label: 介绍文字, name: intro, widget: text }
+              - { label: 邮箱标签, name: email_label, widget: string }
+              - { label: 邮箱地址, name: email, widget: string }
+              - { label: 电话标签, name: phone_label, widget: string }
+              - { label: 显示电话, name: phone, widget: string }
+              - { label: 电话链接, name: phone_link, widget: string }
+              - { label: 姓名标签, name: form_name_label, widget: string }
+              - { label: 姓名占位文字, name: form_name_placeholder, widget: string }
+              - { label: 邮箱标签（表单）, name: form_email_label, widget: string }
+              - { label: 邮箱占位文字, name: form_email_placeholder, widget: string }
+              - { label: 咨询类型标签, name: form_service_label, widget: string }
+              - { label: 留言标签, name: form_message_label, widget: string }
+              - { label: 留言占位文字, name: form_message_placeholder, widget: string }
+              - { label: 提交按钮文字, name: submit_label, widget: string }
+              - { label: 防垃圾信息文字, name: honeypot_label, widget: string }
+              - label: 咨询类型
+                name: services
+                widget: list
+                fields:
+                  - { label: 值, name: value, widget: string }
+                  - { label: 名称, name: label, widget: string }
+          - label: 成功页面
+            name: success
+            widget: object
+            fields:
+              - { label: 标题, name: title, widget: string }
+              - { label: 第一段, name: message_1, widget: text }
+              - { label: 首页链接文字, name: home_link_label, widget: string }
+
   - name: en_bio
     label: "Bio (English)"
-    label_singular: "Bio (English)"
     files:
       - name: bio
         label: "About / Bio"
         file: website/data/en/bio.json
         fields:
-          - { label: "Paragraph 1", name: p1, widget: text }
-          - { label: "Paragraph 2", name: p2, widget: text }
-          - { label: "Paragraph 3 (Concert)", name: p3, widget: text }
-          - { label: "Paragraph 4 (Teaching)", name: p4, widget: text }
-          - { label: "Paragraph 5 (Degrees)", name: p5, widget: text }
+          - { label: Paragraph 1, name: p1, widget: text }
+          - { label: Paragraph 2, name: p2, widget: text }
+          - { label: Paragraph 3, name: p3, widget: text }
+          - { label: Paragraph 4, name: p4, widget: text }
+          - { label: Paragraph 5, name: p5, widget: text }
 
-  - name: en_videos
-    label: "Videos (English)"
+  - name: cn_bio
+    label: "简介（中文）"
     files:
-      - name: videos
-        label: "Performance Videos"
-        file: website/data/en/videos.json
+      - name: bio
+        label: "关于我 / 简介"
+        file: website/data/cn/bio.json
         fields:
-          - label: Videos
-            name: videos
-            widget: list
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: "YouTube URL (full URL)", name: url, widget: string, hint: "e.g. https://youtu.be/g7gorh1vmCI" }
+          - { label: 第一段, name: p1, widget: text }
+          - { label: 第二段, name: p2, widget: text }
+          - { label: 第三段, name: p3, widget: text }
+          - { label: 第四段, name: p4, widget: text }
+          - { label: 第五段, name: p5, widget: text }
 
   - name: en_events
     label: "Events (English)"
@@ -50,11 +213,10 @@ collections:
             fields:
               - { label: Title, name: title, widget: string }
               - { label: Description, name: description, widget: text, required: false }
-              - { label: Date, name: date, widget: string, required: false, hint: "e.g. December 7, 2025" }
+              - { label: Date, name: date, widget: string, required: false }
               - { label: Time, name: time, widget: string, required: false }
               - { label: Venue, name: venue, widget: string, required: false }
-              - { label: "Ticket/Details Link", name: link, widget: string, required: false }
-
+              - { label: Link, name: link, widget: string, required: false }
       - name: past
         label: "Past Performances"
         file: website/data/en/events-past.json
@@ -66,35 +228,7 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: Year, name: year, widget: string, required: false }
               - { label: Venue / Organization, name: venue, widget: string, required: false }
-              - { label: "Details Link", name: link, widget: string, required: false }
-
-  # ─── CHINESE CONTENT ───────────────────────────────────────────
-  - name: cn_bio
-    label: "简介（中文）"
-    files:
-      - name: bio
-        label: "关于我 / 简介"
-        file: website/data/cn/bio.json
-        fields:
-          - { label: "第一段", name: p1, widget: text }
-          - { label: "第二段", name: p2, widget: text }
-          - { label: "第三段（音乐会）", name: p3, widget: text }
-          - { label: "第四段（教学）", name: p4, widget: text }
-          - { label: "第五段（学历）", name: p5, widget: text }
-
-  - name: cn_videos
-    label: "视频（中文）"
-    files:
-      - name: videos
-        label: "演出视频"
-        file: website/data/cn/videos.json
-        fields:
-          - label: 视频
-            name: videos
-            widget: list
-            fields:
-              - { label: 标题, name: title, widget: string }
-              - { label: "YouTube 链接（完整地址）", name: url, widget: string, hint: "例：https://youtu.be/g7gorh1vmCI" }
+              - { label: Link, name: link, widget: string, required: false }
 
   - name: cn_events
     label: "活动（中文）"
@@ -112,8 +246,7 @@ collections:
               - { label: 日期, name: date, widget: string, required: false }
               - { label: 时间, name: time, widget: string, required: false }
               - { label: 场馆, name: venue, widget: string, required: false }
-              - { label: "票务/详情链接", name: link, widget: string, required: false }
-
+              - { label: 链接, name: link, widget: string, required: false }
       - name: past
         label: "往期演出"
         file: website/data/cn/events-past.json
@@ -125,4 +258,128 @@ collections:
               - { label: 标题, name: title, widget: string }
               - { label: 年份, name: year, widget: string, required: false }
               - { label: 场馆 / 主办方, name: venue, widget: string, required: false }
-              - { label: 详情链接, name: link, widget: string, required: false }
+              - { label: 链接, name: link, widget: string, required: false }
+
+  - name: en_gallery
+    label: "Gallery (English)"
+    files:
+      - name: gallery
+        label: "Gallery Images"
+        file: website/data/en/gallery.json
+        fields:
+          - label: Images
+            name: images
+            widget: list
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+
+  - name: cn_gallery
+    label: "视听图集（中文）"
+    files:
+      - name: gallery
+        label: "图片列表"
+        file: website/data/cn/gallery.json
+        fields:
+          - label: 图片
+            name: images
+            widget: list
+            fields:
+              - { label: 图片, name: src, widget: image }
+              - { label: 替代文字, name: alt, widget: string }
+
+  - name: en_videos
+    label: "Videos (English)"
+    files:
+      - name: videos
+        label: "Performance Videos"
+        file: website/data/en/videos.json
+        fields:
+          - label: Videos
+            name: videos
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: YouTube URL, name: url, widget: string }
+
+  - name: cn_videos
+    label: "视频（中文）"
+    files:
+      - name: videos
+        label: "演出视频"
+        file: website/data/cn/videos.json
+        fields:
+          - label: 视频
+            name: videos
+            widget: list
+            fields:
+              - { label: 标题, name: title, widget: string }
+              - { label: YouTube 链接, name: url, widget: string }
+
+  - name: en_duo
+    label: "Duo Page (English)"
+    files:
+      - name: duo
+        label: "Duo Content"
+        file: website/data/en/duo.json
+        fields:
+          - { label: Intro Title, name: intro_title, widget: string }
+          - { label: Intro Text, name: intro_text, widget: text }
+          - { label: Pianist Section Title, name: pianist_section_title, widget: string }
+          - { label: Pianist Image, name: pianist_image, widget: image }
+          - { label: Pianist Image Alt, name: pianist_image_alt, widget: string }
+          - { label: Pianist Subtitle, name: pianist_subtitle, widget: string }
+          - label: Pianist Paragraphs
+            name: pianist_paragraphs
+            widget: list
+            field: { label: Paragraph, name: paragraph, widget: text }
+          - { label: Programs Section Title, name: programs_title, widget: string }
+          - label: Program Items
+            name: programs
+            widget: list
+            field: { label: Program, name: program, widget: string }
+          - { label: Featured Section Title, name: featured_title, widget: string }
+          - label: Featured Programs
+            name: featured_programs
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+          - { label: Booking Section Title, name: booking_title, widget: string }
+          - { label: Booking Text, name: booking_text, widget: text }
+          - { label: Booking Link Label, name: booking_link_label, widget: string }
+          - { label: Booking Link, name: booking_link, widget: string }
+
+  - name: cn_duo
+    label: "组合页面（中文）"
+    files:
+      - name: duo
+        label: "组合内容"
+        file: website/data/cn/duo.json
+        fields:
+          - { label: 介绍标题, name: intro_title, widget: string }
+          - { label: 介绍文字, name: intro_text, widget: text }
+          - { label: 钢琴家板块标题, name: pianist_section_title, widget: string }
+          - { label: 钢琴家图片, name: pianist_image, widget: image }
+          - { label: 图片替代文字, name: pianist_image_alt, widget: string }
+          - { label: 副标题, name: pianist_subtitle, widget: string }
+          - label: 钢琴家段落
+            name: pianist_paragraphs
+            widget: list
+            field: { label: 段落, name: paragraph, widget: text }
+          - { label: 节目标题, name: programs_title, widget: string }
+          - label: 节目列表
+            name: programs
+            widget: list
+            field: { label: 节目, name: program, widget: string }
+          - { label: 特色节目标题, name: featured_title, widget: string }
+          - label: 特色节目
+            name: featured_programs
+            widget: list
+            fields:
+              - { label: 标题, name: title, widget: string }
+              - { label: 描述, name: description, widget: text }
+          - { label: 预约标题, name: booking_title, widget: string }
+          - { label: 预约文字, name: booking_text, widget: text }
+          - { label: 链接文字, name: booking_link_label, widget: string }
+          - { label: 链接地址, name: booking_link, widget: string }

@@ -1,0 +1,93 @@
+{
+  "brand_name": "Jietong Fu",
+  "footer_name": "Jietong Fu",
+  "year_start": "2025",
+  "social_links": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/profile.php?id=61579078418181",
+      "label": "Facebook"
+    },
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/jietongfutenor/",
+      "label": "Instagram"
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@jietongfu?_t=ZP-8yk0rfDh2Ux&_r=1",
+      "label": "TikTok"
+    }
+  ],
+  "home": {
+    "hero_image": "assets/images/B8634F1C-A718-45A8-87DD-EED80FFCCBD4_1_105_c.jpeg",
+    "hero_title": "Dr. Jietong Fu",
+    "hero_subtitle": "Lyric Tenor • Educator • Performer",
+    "section_title": "About Me",
+    "portrait_image": "assets/images/FDA1C0A6-796D-478E-8DA5-A98BE81E932F_1_105_c.jpeg",
+    "portrait_alt": "Portrait of Dr. Jietong Fu",
+    "resume_label": "Download Résumé",
+    "resume_file": "assets/docs/resume.pdf",
+    "teaching_label": "Teaching Philosophy",
+    "teaching_file": "assets/docs/teaching_philosophy.docx"
+  },
+  "gallery": {
+    "section_title": "Photo Gallery",
+    "video_section_title": "Performance Videos"
+  },
+  "events": {
+    "upcoming_title": "Upcoming Events",
+    "past_title": "Past Performances",
+    "empty_message": "Stay tuned for upcoming performances.",
+    "details_label": "Details & Tickets",
+    "date_label": "Date",
+    "time_label": "Time",
+    "venue_label": "Venue"
+  },
+  "contact": {
+    "section_title": "Get in Touch",
+    "intro": "Whether you’re looking to book a performance, schedule a lesson, or simply learn more about my work, I’d love to hear from you.",
+    "email_label": "Email",
+    "email": "jietong.fu@gmail.com",
+    "phone_label": "Phone",
+    "phone": "(202) 556-1652",
+    "phone_link": "+12025561652",
+    "form_name_label": "Name",
+    "form_name_placeholder": "Your name",
+    "form_email_label": "Email",
+    "form_email_placeholder": "Your email",
+    "form_service_label": "Inquiry Type",
+    "form_message_label": "Message",
+    "form_message_placeholder": "Write your message here...",
+    "submit_label": "Send Message",
+    "honeypot_label": "Don’t fill this out if you're human:",
+    "services": [
+      {
+        "value": "general",
+        "label": "General Inquiry"
+      },
+      {
+        "value": "voice-lesson",
+        "label": "Voice Lesson"
+      },
+      {
+        "value": "performance-coaching",
+        "label": "Performance Coaching"
+      },
+      {
+        "value": "stage-coaching",
+        "label": "Stage/Role Coaching"
+      },
+      {
+        "value": "booking",
+        "label": "Performance Booking"
+      }
+    ]
+  },
+  "success": {
+    "title": "Thank You!",
+    "message_1": "Your message has been sent successfully. Thank you for reaching out, and I will get back to you as soon as possible.",
+    "message_2": "In the meantime, feel free to continue exploring the site or return to the homepage.",
+    "home_link_label": "homepage"
+  }
+}

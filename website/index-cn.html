@@ -5,103 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>傅界童 – 抒情男高音</title>
+    <meta name="description" content="傅界童博士官方网站，美国巴尔的摩—华盛顿地区活跃的抒情男高音、声乐教师与演出艺术家。" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body>
-    <!-- Navigation -->
+  <body data-lang="cn" data-page="home">
     <nav class="navbar">
       <div class="logo">傅界童</div>
       <ul>
-        <li><a href="index-cn.html">关于我</a></li>
+        <li><a href="index-cn.html" class="active-link">关于我</a></li>
         <li><a href="gallery-cn.html">视听</a></li>
         <li><a href="events-cn.html">活动</a></li>
         <li><a href="duo-cn.html">组合</a></li>
         <li><a href="contact-cn.html">联系</a></li>
       </ul>
-      <!-- Social media links for the Chinese site -->
-      <div class="social-links">
-        <a href="https://v.douyin.com/aINkPJe1KZA" target="_blank" title="抖音" aria-label="Douyin"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="https://www.xiaohongshu.com/user/profile/6497d550000000001003426b?xsec_token=YBJM7eJvesroUox0bfLb0Wg-YcKr0iqOwcj3i5PrCfhl8%3D&xsec_source=app_share&xhsshare=CopyLink&appuid=6497d550000000001003426b&apptime=1754768024&share_id=e971759b7b474e8dbb39e472d2da5ec9&share_channel=copy_link" target="_blank" title="小红书" aria-label="Xiaohongshu"><img src="assets/images/xiaohongshu.png" alt="小红书 logo" /></a>
-      </div>
-      <!-- Language toggle back to English -->
-      <div class="lang-toggle">
-        <a href="index.html">English</a>
-      </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="social-links"></div>
+      <div class="lang-toggle"><a href="index.html">English</a></div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
     </nav>
 
-    <!-- Hero Section -->
-    <header
-      class="hero"
-      style="background-image: url('assets/images/B8634F1C-A718-45A8-87DD-EED80FFCCBD4_1_105_c.jpeg');"
-    >
+    <header class="hero" id="hero">
       <div class="hero-content">
-        <h1>傅界童</h1>
-        <p>声乐博士 • 抒情男高音</p>
+        <h1 id="hero-title"></h1>
+        <p id="hero-subtitle"></p>
       </div>
     </header>
 
-    <!-- About Section -->
     <section id="about">
       <div class="container">
-        <h2 class="section-title">关于我</h2>
+        <h2 class="section-title" id="about-title"></h2>
         <div class="about">
-          <!-- Display the vertical portrait in the About section -->
-          <img
-            src="assets/images/FDA1C0A6-796D-478E-8DA5-A98BE81E932F_1_105_c.jpeg"
-            alt="傅界童肖像"
-          />
-          <div class="text" id="bio-text">
-            <!-- 简介从 data/cn/bio.json 动态加载 -->
-                        <div class="download-links">
-              <!-- Use the Chinese resume and teaching philosophy documents provided by the user -->
-              <a href="assets/docs/傅界童简历.pdf" target="_blank" download>
-                简历下载
-              </a>
-              <a
-                href="assets/docs/声乐教学理念.docx"
-                target="_blank"
-                download
-              >
-                教学理念
-              </a>
+          <img id="about-image" src="" alt="" />
+          <div class="text content-card" id="bio-text">
+            <div class="download-links">
+              <a id="resume-link" href="#" target="_blank" download></a>
+              <a id="teaching-link" href="#" target="_blank" download></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-      &copy; 2025 傅界童。保留所有权利。
+      &copy; <span id="footer-year"></span> <span id="footer-name"></span>。保留所有权利。
     </footer>
 
     <script src="js/scripts.js"></script>
-    <script>
-      fetch('data/cn/bio.json')
-        .then(r => r.json())
-        .then(data => {
-          const container = document.getElementById('bio-text');
-          ['p1','p2','p3','p4','p5'].forEach(key => {
-            if (data[key]) {
-              const p = document.createElement('p');
-              p.textContent = data[key];
-              container.insertBefore(p, container.querySelector('.download-links'));
-            }
-          });
-        });
-    </script>
   </body>
 </html>

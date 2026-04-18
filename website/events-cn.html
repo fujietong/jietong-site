@@ -6,107 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>活动 – 傅界童</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   </head>
-  <body>
-    <!-- Navigation -->
+  <body data-lang="cn" data-page="events">
     <nav class="navbar">
       <div class="logo">傅界童</div>
       <ul>
         <li><a href="index-cn.html">关于我</a></li>
         <li><a href="gallery-cn.html">视听</a></li>
-        <li><a href="events-cn.html">活动</a></li>
+        <li><a href="events-cn.html" class="active-link">活动</a></li>
         <li><a href="duo-cn.html">组合</a></li>
         <li><a href="contact-cn.html">联系</a></li>
       </ul>
-      <!-- Social media links for the Chinese site -->
-      <div class="social-links">
-        <a href="https://v.douyin.com/aINkPJe1KZA" target="_blank" title="抖音" aria-label="Douyin"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="https://www.xiaohongshu.com/user/profile/6497d550000000001003426b?xsec_token=YBJM7eJvesroUox0bfLb0Wg-YcKr0iqOwcj3i5PrCfhl8%3D&xsec_source=app_share&xhsshare=CopyLink&appuid=6497d550000000001003426b&apptime=1754768024&share_id=e971759b7b474e8dbb39e472d2da5ec9&share_channel=copy_link" target="_blank" title="小红书" aria-label="Xiaohongshu"><img src="assets/images/xiaohongshu.png" alt="小红书 logo" /></a>
-      </div>
-      <!-- Language toggle back to English -->
-      <div class="lang-toggle">
-        <a href="events.html">English</a>
-      </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="social-links"></div>
+      <div class="lang-toggle"><a href="events.html">English</a></div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
     </nav>
 
-    <section id="upcoming-events">
+    <section class="page-intro">
       <div class="container">
-        <h2 class="section-title">近期活动</h2>
-        <div class="shows-list" id="upcoming-list">
-          <!-- Loaded dynamically -->
-        </div>
-    </div>
+        <h2 class="section-title" id="upcoming-title"></h2>
+        <div class="shows-list" id="upcoming-list"></div>
+      </div>
     </section>
 
-    <section id="past-events">
+    <section>
       <div class="container">
-        <h2 class="section-title">过往演出</h2>
-        <div class="shows-list" id="past-list">
-          <!-- Loaded dynamically -->
-        </div>
-    </div>
+        <h2 class="section-title" id="past-title"></h2>
+        <div class="shows-list" id="past-list"></div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      &copy; 2025 傅界童。保留所有权利。
-    </footer>
-
+    <footer>&copy; <span id="footer-year"></span> <span id="footer-name"></span>。保留所有权利。</footer>
     <script src="js/scripts.js"></script>
-    <script>
-      // Upcoming events
-      fetch('data/cn/events-upcoming.json')
-        .then(r => r.json())
-        .then(data => {
-          const container = document.getElementById('upcoming-list');
-          if (!data.events || data.events.length === 0) {
-            container.innerHTML = '<p style="color:#888;">Stay tuned for upcoming performances.</p>';
-            return;
-          }
-          data.events.forEach(e => {
-            let html = `<div class="show-card"><h3>${e.title}</h3>`;
-            if (e.description) html += `<p>${e.description}</p>`;
-            if (e.date || e.time || e.venue) {
-              html += '<p>';
-              if (e.date) html += `Date: ${e.date}<br/>`;
-              if (e.time) html += `Time: ${e.time}<br/>`;
-              if (e.venue) html += `Venue: ${e.venue}`;
-              html += '</p>';
-            }
-            if (e.link) html += `<a href="${e.link}" target="_blank">Details &amp; Tickets</a>`;
-            html += '</div>';
-            container.innerHTML += html;
-          });
-        });
-
-      // Past events
-      fetch('data/cn/events-past.json')
-        .then(r => r.json())
-        .then(data => {
-          const container = document.getElementById('past-list');
-          data.events.forEach(e => {
-            let html = `<div class="show-card"><h3>${e.title}</h3>`;
-            let meta = [];
-            if (e.year) meta.push(e.year);
-            if (e.venue) meta.push(e.venue);
-            if (meta.length) html += `<p>${meta.join(' · ')}</p>`;
-            if (e.link) html += `<a href="${e.link}" target="_blank">Details</a>`;
-            html += '</div>';
-            container.innerHTML += html;
-          });
-        });
-    </script>
   </body>
 </html>

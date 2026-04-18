@@ -6,16 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Contact – Jietong Fu</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   </head>
-  <body>
-    <!-- Navigation -->
+  <body data-lang="en" data-page="contact">
     <nav class="navbar">
       <div class="logo">Jietong Fu</div>
       <ul>
@@ -23,98 +18,42 @@
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="duo.html">Duo</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active-link">Contact</a></li>
       </ul>
-      <!-- Social media links for the English site -->
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61579078418181" target="_blank" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/jietongfutenor/" target="_blank" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@jietongfu?_t=ZP-8yk0rfDh2Ux&_r=1" target="_blank" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
-      <!-- Language toggle between English and Chinese -->
-      <div class="lang-toggle">
-        <a href="contact-cn.html">中文</a>
-      </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="social-links"></div>
+      <div class="lang-toggle"><a href="contact-cn.html">中文</a></div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
     </nav>
 
-    <section id="contact-section">
+    <section class="page-intro">
       <div class="container">
-        <h2 class="section-title">Get in Touch</h2>
-        <div class="contact-info">
-          <p>
-            Whether you’re looking to book a performance, schedule a lesson,
-            or simply learn more about my work, I’d love to hear from you.
-          </p>
-          <p><strong>Email:</strong> <a href="mailto:jietong.fu@gmail.com">jietong.fu@gmail.com</a></p>
-          <p><strong>Phone:</strong> <a href="tel:+12025561652">(202) 556‑1652</a></p>
+        <h2 class="section-title" id="contact-title"></h2>
+        <div class="contact-layout">
+          <div class="contact-info">
+            <p id="contact-intro"></p>
+            <p><strong id="contact-email-label"></strong>: <a id="contact-email-link" href="#"></a></p>
+            <p><strong id="contact-phone-label"></strong>: <a id="contact-phone-link" href="#"></a></p>
+          </div>
+          <form id="contact-form" name="contact" method="POST" action="/.netlify/functions/send-email" class="contact-form">
+            <input type="hidden" id="form-lang" name="lang" value="en" />
+            <p style="display:none;">
+              <label><span id="honeypot-label"></span><input name="bot-field" /></label>
+            </p>
+            <label for="name" id="form-name-label"></label>
+            <input type="text" id="name" name="name" required />
+            <label for="email" id="form-email-label"></label>
+            <input type="email" id="email" name="email" required />
+            <label for="service" id="form-service-label"></label>
+            <select id="service" name="service"></select>
+            <label for="message" id="form-message-label"></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit" id="form-submit-label"></button>
+          </form>
         </div>
-        <!-- Contact form: this posts to a Netlify Function that sends an email via SendGrid -->
-        <form
-          id="contact-form"
-          name="contact"
-          method="POST"
-          action="/.netlify/functions/send-email"
-          class="contact-form"
-        >
-          <!-- Hidden honeypot field to prevent spam; bots filling this field will be ignored by the function -->
-          <p style="display:none;">
-            <label>
-              Don’t fill this out if you're human:
-              <input name="bot-field" />
-            </label>
-          </p>
-
-          <label for="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your name"
-            required
-          />
-
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your email"
-            required
-          />
-
-          <label for="service">Inquiry Type</label>
-          <select id="service" name="service">
-            <option value="general">General Inquiry</option>
-            <option value="voice-lesson">Voice Lesson</option>
-            <option value="performance-coaching">Performance Coaching</option>
-            <option value="stage-coaching">Stage/Role Coaching</option>
-            <option value="booking">Performance Booking</option>
-          </select>
-
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="Write your message here..."
-            required
-          ></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      &copy; 2025 Jietong Fu. All rights reserved.
-    </footer>
-
+    <footer>&copy; <span id="footer-year"></span> <span id="footer-name"></span>. All rights reserved.</footer>
     <script src="js/scripts.js"></script>
   </body>
 </html>

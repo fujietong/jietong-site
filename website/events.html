@@ -6,108 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Events – Jietong Fu</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   </head>
-  <body>
-    <!-- Navigation -->
+  <body data-lang="en" data-page="events">
     <nav class="navbar">
       <div class="logo">Jietong Fu</div>
       <ul>
         <li><a href="index.html">About</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="events.html">Events</a></li>
+        <li><a href="events.html" class="active-link">Events</a></li>
         <li><a href="duo.html">Duo</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <!-- Social media links for the English site -->
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61579078418181" target="_blank" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/jietongfutenor/" target="_blank" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@jietongfu?_t=ZP-8yk0rfDh2Ux&_r=1" target="_blank" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
-      <!-- Language toggle between English and Chinese -->
-      <div class="lang-toggle">
-        <a href="events-cn.html">中文</a>
-      </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="social-links"></div>
+      <div class="lang-toggle"><a href="events-cn.html">中文</a></div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
     </nav>
 
-    <section id="upcoming-events">
+    <section class="page-intro">
       <div class="container">
-        <h2 class="section-title">Upcoming Events</h2>
-        <div class="shows-list" id="upcoming-list">
-          <!-- Loaded dynamically -->
-        </div>
-    </div>
+        <h2 class="section-title" id="upcoming-title"></h2>
+        <div class="shows-list" id="upcoming-list"></div>
+      </div>
     </section>
 
-    <section id="past-events">
+    <section>
       <div class="container">
-        <h2 class="section-title">Past Performances</h2>
-        <div class="shows-list" id="past-list">
-          <!-- Loaded dynamically -->
-        </div>
-    </div>
+        <h2 class="section-title" id="past-title"></h2>
+        <div class="shows-list" id="past-list"></div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      &copy; 2025 Jietong Fu. All rights reserved.
-    </footer>
-
+    <footer>&copy; <span id="footer-year"></span> <span id="footer-name"></span>. All rights reserved.</footer>
     <script src="js/scripts.js"></script>
-    <script>
-      // Upcoming events
-      fetch('data/en/events-upcoming.json')
-        .then(r => r.json())
-        .then(data => {
-          const container = document.getElementById('upcoming-list');
-          if (!data.events || data.events.length === 0) {
-            container.innerHTML = '<p style="color:#888;">Stay tuned for upcoming performances.</p>';
-            return;
-          }
-          data.events.forEach(e => {
-            let html = `<div class="show-card"><h3>${e.title}</h3>`;
-            if (e.description) html += `<p>${e.description}</p>`;
-            if (e.date || e.time || e.venue) {
-              html += '<p>';
-              if (e.date) html += `Date: ${e.date}<br/>`;
-              if (e.time) html += `Time: ${e.time}<br/>`;
-              if (e.venue) html += `Venue: ${e.venue}`;
-              html += '</p>';
-            }
-            if (e.link) html += `<a href="${e.link}" target="_blank">Details &amp; Tickets</a>`;
-            html += '</div>';
-            container.innerHTML += html;
-          });
-        });
-
-      // Past events
-      fetch('data/en/events-past.json')
-        .then(r => r.json())
-        .then(data => {
-          const container = document.getElementById('past-list');
-          data.events.forEach(e => {
-            let html = `<div class="show-card"><h3>${e.title}</h3>`;
-            let meta = [];
-            if (e.year) meta.push(e.year);
-            if (e.venue) meta.push(e.venue);
-            if (meta.length) html += `<p>${meta.join(' · ')}</p>`;
-            if (e.link) html += `<a href="${e.link}" target="_blank">Details</a>`;
-            html += '</div>';
-            container.innerHTML += html;
-          });
-        });
-    </script>
   </body>
 </html>

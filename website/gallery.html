@@ -6,105 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Gallery – Jietong Fu</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   </head>
-  <body>
-    <!-- Navigation -->
+  <body data-lang="en" data-page="gallery">
     <nav class="navbar">
       <div class="logo">Jietong Fu</div>
       <ul>
         <li><a href="index.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html" class="active-link">Gallery</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="duo.html">Duo</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <!-- Social media links for the English site -->
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61579078418181" target="_blank" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/jietongfutenor/" target="_blank" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@jietongfu?_t=ZP-8yk0rfDh2Ux&_r=1" target="_blank" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
-      <!-- Language toggle between English and Chinese -->
-      <div class="lang-toggle">
-        <a href="gallery-cn.html">中文</a>
-      </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="social-links"></div>
+      <div class="lang-toggle"><a href="gallery-cn.html">中文</a></div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
     </nav>
 
-    <section id="gallery">
+    <section class="page-intro">
       <div class="container">
-        <h2 class="section-title">Photo Gallery</h2>
-        <div class="gallery-grid">
-          <!-- The images displayed in the gallery grid. -->
-          <img src="assets/images/0C0E295D-D346-42FB-9FEB-8CD8A5D211BA_1_105_c.jpeg" alt="Performance photo" />
-          <img src="assets/images/3A7F9584-A7F8-4816-B14C-5E1BF0DD1A14_1_105_c.jpeg" alt="Performance photo" />
-          <img src="assets/images/4C71AF35-F7EF-4105-97CA-AADD41A49200_1_105_c.jpeg" alt="Performance photo" />
-          <img src="assets/images/78788d585dfeaca42f28327c5413628b.JPG" alt="Performance photo" />
-          <img src="assets/images/85AA38F2-D7E7-434E-901F-B523D42C76F6_1_105_c.jpeg" alt="Performance photo" />
-          <img src="assets/images/8FC2CF66-1266-402F-9A96-6B6D00DA2F06_1_105_c.jpeg" alt="Performance photo" />
-          <img src="assets/images/AD03A1BC-4FFF-4AE5-AED5-A63F854E8B5A_4_5005_c.jpeg" alt="Portrait" />
-          <img src="assets/images/B82C3015-B128-4645-BB51-58F5B9355C8D_1_105_c.jpeg" alt="Portrait" />
-          <img src="assets/images/B8634F1C-A718-45A8-87DD-EED80FFCCBD4_1_105_c.jpeg" alt="Portrait" />
-          <img src="assets/images/D0CD1B99-0A50-45B6-ADD1-42BB2FED77FD_1_105_c.jpeg" alt="Portrait" />
-          <img src="assets/images/FDA1C0A6-796D-478E-8DA5-A98BE81E932F_1_105_c.jpeg" alt="Portrait" />
-          <img src="assets/images/IMG_8214.WEBP" alt="Performance photo" />
-          <img src="assets/images/IMG_8220.jpg" alt="Performance photo" />
-        </div>
-
-        <!-- Lightbox overlay (hidden by default) -->
-        <div id="lightbox">
-          <img src="" alt="Lightbox image" />
-        </div>
+        <h2 class="section-title" id="gallery-title"></h2>
+        <div class="gallery-grid" id="gallery-grid"></div>
+        <div id="lightbox"><img src="" alt="Lightbox image" /></div>
       </div>
     </section>
 
-    <!-- Video Gallery -->
-    <section id="videos">
+    <section>
       <div class="container">
-        <h2 class="section-title">Performance Videos</h2>
-        <div class="shows-list" id="video-list">
-          <!-- Videos loaded dynamically -->
-        </div>
+        <h2 class="section-title" id="video-title"></h2>
+        <div class="shows-list" id="video-list"></div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      &copy; 2025 Jietong Fu. All rights reserved.
-    </footer>
-
+    <footer>&copy; <span id="footer-year"></span> <span id="footer-name"></span>. All rights reserved.</footer>
     <script src="js/scripts.js"></script>
-    <script>
-      fetch('data/en/videos.json')
-        .then(r => r.json())
-        .then(data => {
-          const container = document.getElementById('video-list');
-          data.videos.forEach(v => {
-            const id = v.url.includes('youtu.be/')
-              ? v.url.split('youtu.be/')[1].split('?')[0]
-              : v.url.split('v=')[1].split('&')[0];
-            container.innerHTML += `
-              <div class="show-card">
-                <h3>${v.title}</h3>
-                <iframe width="100%" height="200"
-                  src="https://www.youtube.com/embed/${id}"
-                  title="${v.title}" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>`;
-          });
-        });
-    </script>
   </body>
 </html>

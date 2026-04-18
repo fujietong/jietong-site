@@ -5,106 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Dr. Jietong Fu – Lyric Tenor</title>
-    <!-- Google Fonts -->
+    <meta name="description" content="Official website of Dr. Jietong Fu, lyric tenor, educator, and performer based in the Baltimore–Washington, D.C. area." />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body>
-    <!-- Navigation -->
+  <body data-lang="en" data-page="home">
     <nav class="navbar">
       <div class="logo">Jietong Fu</div>
       <ul>
-        <li><a href="index.html">About</a></li>
+        <li><a href="index.html" class="active-link">About</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="duo.html">Duo</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <!-- Social media links for the English site -->
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61579078418181" target="_blank" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/jietongfutenor/" target="_blank" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@jietongfu?_t=ZP-8yk0rfDh2Ux&_r=1" target="_blank" title="TikTok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-      </div>
-      <!-- Language toggle between English and Chinese -->
-      <div class="lang-toggle">
-        <a href="index-cn.html">中文</a>
-      </div>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="social-links"></div>
+      <div class="lang-toggle"><a href="index-cn.html">中文</a></div>
+      <div class="hamburger"><span></span><span></span><span></span></div>
     </nav>
 
-    <!-- Hero Section -->
-    <!-- Use the horizontal umbrella portrait as the hero background on desktop -->
-    <header
-      class="hero"
-      style="background-image: url('assets/images/B8634F1C-A718-45A8-87DD-EED80FFCCBD4_1_105_c.jpeg');"
-    >
+    <header class="hero" id="hero">
       <div class="hero-content">
-        <h1>Dr. Jietong Fu</h1>
-        <p>Lyric Tenor • Educator • Performer</p>
+        <h1 id="hero-title"></h1>
+        <p id="hero-subtitle"></p>
       </div>
     </header>
 
-    <!-- About Section -->
     <section id="about">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title" id="about-title"></h2>
         <div class="about">
-          <!-- Display the vertical portrait in the About section -->
-          <img
-            src="assets/images/FDA1C0A6-796D-478E-8DA5-A98BE81E932F_1_105_c.jpeg"
-            alt="Portrait of Dr. Jietong Fu"
-          />
-          <div class="text" id="bio-text">
-            <!-- Bio loaded dynamically from data/en/bio.json -->
-                        <div class="download-links">
-              <a href="assets/docs/resume.pdf" target="_blank" download>
-                Download&nbsp;Résumé
-              </a>
-              <a
-                href="assets/docs/teaching_philosophy.docx"
-                target="_blank"
-                download
-              >
-                Teaching&nbsp;Philosophy
-              </a>
+          <img id="about-image" src="" alt="" />
+          <div class="text content-card" id="bio-text">
+            <div class="download-links">
+              <a id="resume-link" href="#" target="_blank" download></a>
+              <a id="teaching-link" href="#" target="_blank" download></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-      &copy; 2025 Jietong Fu. All rights reserved.
+      &copy; <span id="footer-year"></span> <span id="footer-name"></span>. All rights reserved.
     </footer>
 
     <script src="js/scripts.js"></script>
-    <script>
-      fetch('data/en/bio.json')
-        .then(r => r.json())
-        .then(data => {
-          const container = document.getElementById('bio-text');
-          ['p1','p2','p3','p4','p5'].forEach(key => {
-            if (data[key]) {
-              const p = document.createElement('p');
-              p.textContent = data[key];
-              container.insertBefore(p, container.querySelector('.download-links'));
-            }
-          });
-        });
-    </script>
   </body>
 </html>

@@ -1,0 +1,88 @@
+{
+  "brand_name": "傅界童",
+  "footer_name": "傅界童",
+  "year_start": "2025",
+  "social_links": [
+    {
+      "platform": "douyin",
+      "url": "https://v.douyin.com/aINkPJe1KZA",
+      "label": "抖音"
+    },
+    {
+      "platform": "xiaohongshu",
+      "url": "https://www.xiaohongshu.com/user/profile/6497d550000000001003426b?xsec_token=YBJM7eJvesroUox0bfLb0Wg-YcKr0iqOwcj3i5PrCfhl8%3D&xsec_source=app_share&xhsshare=CopyLink&appuid=6497d550000000001003426b&apptime=1754768024&share_id=e971759b7b474e8dbb39e472d2da5ec9&share_channel=copy_link",
+      "label": "小红书"
+    }
+  ],
+  "home": {
+    "hero_image": "assets/images/B8634F1C-A718-45A8-87DD-EED80FFCCBD4_1_105_c.jpeg",
+    "hero_title": "傅界童",
+    "hero_subtitle": "声乐博士 • 抒情男高音",
+    "section_title": "关于我",
+    "portrait_image": "assets/images/FDA1C0A6-796D-478E-8DA5-A98BE81E932F_1_105_c.jpeg",
+    "portrait_alt": "傅界童肖像",
+    "resume_label": "简历下载",
+    "resume_file": "assets/docs/傅界童简历.pdf",
+    "teaching_label": "教学理念",
+    "teaching_file": "assets/docs/声乐教学理念.docx"
+  },
+  "gallery": {
+    "section_title": "视听画廊",
+    "video_section_title": "演出视频"
+  },
+  "events": {
+    "upcoming_title": "即将到来的活动",
+    "past_title": "往期演出",
+    "empty_message": "更多演出信息即将发布。",
+    "details_label": "详情 / 票务",
+    "date_label": "日期",
+    "time_label": "时间",
+    "venue_label": "场馆"
+  },
+  "contact": {
+    "section_title": "联系我",
+    "intro": "无论您想预定演出、安排课程，或想了解更多关于我的信息，我都期待您的来信。",
+    "email_label": "电子邮箱",
+    "email": "jietong.fu@gmail.com",
+    "phone_label": "电话",
+    "phone": "(202) 556-1652",
+    "phone_link": "+12025561652",
+    "form_name_label": "姓名",
+    "form_name_placeholder": "您的姓名",
+    "form_email_label": "电子邮箱",
+    "form_email_placeholder": "您的邮箱",
+    "form_service_label": "查询类型",
+    "form_message_label": "留言",
+    "form_message_placeholder": "请输入您的留言...",
+    "submit_label": "发送信息",
+    "honeypot_label": "如果你是人类请不要填写：",
+    "services": [
+      {
+        "value": "general",
+        "label": "一般咨询"
+      },
+      {
+        "value": "voice-lesson",
+        "label": "声乐课"
+      },
+      {
+        "value": "performance-coaching",
+        "label": "演出指导"
+      },
+      {
+        "value": "stage-coaching",
+        "label": "舞台/角色指导"
+      },
+      {
+        "value": "booking",
+        "label": "演出预约"
+      }
+    ]
+  },
+  "success": {
+    "title": "感谢您的来信！",
+    "message_1": "您的消息已成功发送。感谢您的关注，我会尽快回复您。",
+    "message_2": "在此期间，欢迎浏览网站其他内容或返回首页。",
+    "home_link_label": "首页"
+  }
+}
