@@ -1,12 +1,20 @@
 {
   "events": [
     {
-      "title": "Portland Opera To Go: The Elixir of Love",
-      "description": "Dr. Fu performs the role of Nemorino in Donizetti's charming comic opera as part of Portland Opera's touring production.",
-      "date": "",
-      "time": "",
-      "venue": "Portland Opera",
-      "link": "https://www.portlandopera.org/performances-tickets/25-26-season/portland-opera-to-go-the-elixir-of-love/"
+      "title": "Sound and Image - A Musical Journey Through Classical Chinese Poetry",
+      "description": "Experience the timeless beauty of Classical Chinese poetry through art song, piano, and carefully curated imagery—no knowledge of Chinese language or culture required.",
+      "date": "September 20, 2026",
+      "time": "3 PM",
+      "venue": "Messiah United Methodist Church, Springfield, VA",
+      "link": "https://www.instagram.com/p/DZ8KOd2j4KA/?igsh=MTJtdzRxNjEybjFycA=="
+    },
+    {
+      "title": "First Fridays at Boordy Vineyards with Maryland Opera",
+      "description": "On October 2, 2026, Dr. Fu joins Maryland Opera for an evening of favorites from opera, Broadway, and beyond at Boordy Vineyards. Enjoy a glass of wine and a delicious meal from a local food truck as you relax on the lawn and experience opera in the great outdoors against the idyllic backdrop of the setting sun. Doors open at 6:00 p.m.",
+      "date": "October 2, 2026",
+      "time": "7 PM",
+      "venue": "12820 Long Green Pike | Hydes, MD 21082",
+      "link": "https://www.marylandopera.org/upcoming-performances"
     }
   ]
 }
