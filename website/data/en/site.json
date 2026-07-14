@@ -26,10 +26,21 @@
     "section_title": "About Me",
     "portrait_image": "assets/images/FDA1C0A6-796D-478E-8DA5-A98BE81E932F_1_105_c.jpeg",
     "portrait_alt": "Portrait of Dr. Jietong Fu",
-    "resume_label": "Download Résumé",
-    "resume_file": "assets/docs/resume.pdf",
-    "teaching_label": "Teaching Philosophy",
-    "teaching_file": "assets/docs/teaching_philosophy.docx"
+    "documents_title": "Documents",
+    "documents": [
+      {
+        "label": "Opera Résumé",
+        "file": "assets/uploads/jietong-fu-opera-resume.pdf"
+      },
+      {
+        "label": "Teaching Philosophy",
+        "file": "assets/uploads/jietong-fu-teaching-philosophy.docx"
+      },
+      {
+        "label": "Repertoire List",
+        "file": "assets/uploads/jietong-fu-repertoire-list.docx"
+      }
+    ]
   },
   "gallery": {
     "section_title": "Photo Gallery",

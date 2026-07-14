@@ -11,6 +11,8 @@ public_folder: assets/images
 
 collections:
   - name: en_site
+    media_folder: /website/assets/uploads
+    public_folder: /assets/uploads
     label: "Site Settings (English)"
     files:
       - name: site
@@ -37,10 +39,14 @@ collections:
               - { label: About Section Title, name: section_title, widget: string }
               - { label: About Portrait, name: portrait_image, widget: image }
               - { label: Portrait Alt Text, name: portrait_alt, widget: string }
-              - { label: Resume Button Label, name: resume_label, widget: string }
-              - { label: Resume File Path, name: resume_file, widget: string }
-              - { label: Teaching Button Label, name: teaching_label, widget: string }
-              - { label: Teaching File Path, name: teaching_file, widget: string }
+              - { label: Documents Section Title, name: documents_title, widget: string, required: false }
+              - label: Downloadable Documents
+                name: documents
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: Button Label, name: label, widget: string }
+                  - { label: File, name: file, widget: file }
           - label: Gallery Page
             name: gallery
             widget: object
@@ -93,6 +99,8 @@ collections:
               - { label: Home Link Label, name: home_link_label, widget: string }
 
   - name: cn_site
+    media_folder: /website/assets/uploads
+    public_folder: /assets/uploads
     label: "站点设置（中文）"
     files:
       - name: site
@@ -119,10 +127,14 @@ collections:
               - { label: 关于我标题, name: section_title, widget: string }
               - { label: 个人照片, name: portrait_image, widget: image }
               - { label: 图片替代文字, name: portrait_alt, widget: string }
-              - { label: 简历按钮文字, name: resume_label, widget: string }
-              - { label: 简历文件路径, name: resume_file, widget: string }
-              - { label: 教学理念按钮文字, name: teaching_label, widget: string }
-              - { label: 教学理念文件路径, name: teaching_file, widget: string }
+              - { label: 附件区标题, name: documents_title, widget: string, required: false }
+              - label: 可下载附件
+                name: documents
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: 按钮文字, name: label, widget: string }
+                  - { label: 上传文件, name: file, widget: file }
           - label: 视听页面
             name: gallery
             widget: object
@@ -317,6 +329,8 @@ collections:
               - { label: YouTube 链接, name: url, widget: string }
 
   - name: en_duo
+    media_folder: /website/assets/uploads
+    public_folder: /assets/uploads
     label: "Duo Page (English)"
     files:
       - name: duo
@@ -345,12 +359,16 @@ collections:
             fields:
               - { label: Title, name: title, widget: string }
               - { label: Description, name: description, widget: text }
+              - { label: Program Button Label, name: program_label, widget: string, required: false }
+              - { label: Program File, name: program_file, widget: file, required: false }
           - { label: Booking Section Title, name: booking_title, widget: string }
           - { label: Booking Text, name: booking_text, widget: text }
           - { label: Booking Link Label, name: booking_link_label, widget: string }
           - { label: Booking Link, name: booking_link, widget: string }
 
   - name: cn_duo
+    media_folder: /website/assets/uploads
+    public_folder: /assets/uploads
     label: "组合页面（中文）"
     files:
       - name: duo
@@ -379,6 +397,8 @@ collections:
             fields:
               - { label: 标题, name: title, widget: string }
               - { label: 描述, name: description, widget: text }
+              - { label: 节目单按钮文字, name: program_label, widget: string, required: false }
+              - { label: 节目单文件, name: program_file, widget: file, required: false }
           - { label: 预约标题, name: booking_title, widget: string }
           - { label: 预约文字, name: booking_text, widget: text }
           - { label: 链接文字, name: booking_link_label, widget: string }

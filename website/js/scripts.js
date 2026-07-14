@@ -88,10 +88,6 @@ function renderHome(site, bio) {
     'about-title': home.section_title,
     'about-image': home.portrait_image,
     'about-image-alt': home.portrait_alt,
-    'resume-label': home.resume_label,
-    'resume-file': home.resume_file,
-    'teaching-label': home.teaching_label,
-    'teaching-file': home.teaching_file,
   };
   if (document.getElementById('hero-title')) document.getElementById('hero-title').textContent = map['hero-title'] || '';
   if (document.getElementById('hero-subtitle')) document.getElementById('hero-subtitle').textContent = map['hero-subtitle'] || '';
@@ -101,15 +97,15 @@ function renderHome(site, bio) {
     aboutImg.src = map['about-image'] || aboutImg.src;
     aboutImg.alt = map['about-image-alt'] || aboutImg.alt;
   }
-  const resumeLink = document.getElementById('resume-link');
-  if (resumeLink) {
-    resumeLink.href = map['resume-file'] || '#';
-    resumeLink.textContent = map['resume-label'] || '';
-  }
-  const teachingLink = document.getElementById('teaching-link');
-  if (teachingLink) {
-    teachingLink.href = map['teaching-file'] || '#';
-    teachingLink.textContent = map['teaching-label'] || '';
+  const documentsTitle = document.getElementById('documents-title');
+  if (documentsTitle) documentsTitle.textContent = home.documents_title || '';
+  const documentsList = document.getElementById('documents-list');
+  if (documentsList) {
+    const documents = Array.isArray(home.documents) ? home.documents : [];
+    documentsList.innerHTML = documents
+      .filter(item => item && item.label && item.file)
+      .map(item => `<a href="${escapeHtml(item.file)}" target="_blank" rel="noopener">${escapeHtml(item.label)}</a>`)
+      .join('');
   }
   const bioWrap = document.getElementById('bio-text');
   const downloadLinks = bioWrap ? bioWrap.querySelector('.download-links') : null;
@@ -215,7 +211,12 @@ function renderDuo(duo) {
   }
   const featured = document.getElementById('duo-featured-list');
   if (featured && duo.featured_programs) {
-    featured.innerHTML = duo.featured_programs.map(item => `<article class="show-card"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></article>`).join('');
+    featured.innerHTML = duo.featured_programs.map(item => {
+      const programLink = item.program_file
+        ? `<a href="${escapeHtml(item.program_file)}" target="_blank" rel="noopener">${escapeHtml(item.program_label || 'View Program')}</a>`
+        : '';
+      return `<article class="show-card"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p>${programLink}</article>`;
+    }).join('');
   }
   const booking = document.getElementById('duo-booking-text');
   if (booking) {

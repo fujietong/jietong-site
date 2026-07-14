@@ -11,11 +11,15 @@
   "featured_programs": [
     {
       "title": "A Tapestry of Emotions",
-      "description": "A musical journey not one of distance, but of emotion. Like a traveler setting out under the quiet veil of night, begin with anticipation, stepping gently into the unknown. Each piece in this program is a moment on the path — of sorrow and joy, longing and tenderness, passion and peace."
+      "description": "A musical journey not one of distance, but of emotion. Like a traveler setting out under the quiet veil of night, begin with anticipation, stepping gently into the unknown. Each piece in this program is a moment on the path — of sorrow and joy, longing and tenderness, passion and peace.",
+      "program_label": "View Program",
+      "program_file": "assets/uploads/a-tapestry-of-emotions-program.pdf"
     },
     {
       "title": "Sound and Image: A Musical Journey Through Classical Chinese Poetry",
-      "description": "Experience the timeless beauty of Classical Chinese poetry through art song, piano, and evocative imagery. This immersive multimedia recital invites audiences of all backgrounds to experience the emotions, stories, and landscapes of China’s poetic tradition—no knowledge of Chinese language or culture required."
+      "description": "Experience the timeless beauty of Classical Chinese poetry through art song, piano, and evocative imagery. This immersive multimedia recital invites audiences of all backgrounds to experience the emotions, stories, and landscapes of China’s poetic tradition—no knowledge of Chinese language or culture required.",
+      "program_label": "View Program",
+      "program_file": "assets/uploads/sound-and-image-program.pdf"
     }
   ],
   "pianist_section_title": "Meet Pianist – Dr. Xin Wu",

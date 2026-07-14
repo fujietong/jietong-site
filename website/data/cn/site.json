@@ -21,10 +21,21 @@
     "section_title": "关于我",
     "portrait_image": "assets/images/FDA1C0A6-796D-478E-8DA5-A98BE81E932F_1_105_c.jpeg",
     "portrait_alt": "傅界童肖像",
-    "resume_label": "简历下载",
-    "resume_file": "assets/docs/傅界童简历.pdf",
-    "teaching_label": "教学理念",
-    "teaching_file": "assets/docs/声乐教学理念.docx"
+    "documents_title": "资料下载",
+    "documents": [
+      {
+        "label": "歌剧简历",
+        "file": "assets/uploads/jietong-fu-opera-resume.pdf"
+      },
+      {
+        "label": "声乐教学理念",
+        "file": "assets/uploads/jietong-fu-teaching-philosophy.docx"
+      },
+      {
+        "label": "曲目单",
+        "file": "assets/uploads/jietong-fu-repertoire-list.docx"
+      }
+    ]
   },
   "gallery": {
     "section_title": "视听画廊",
