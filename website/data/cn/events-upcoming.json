@@ -1,12 +1,20 @@
 {
   "events": [
     {
-      "title": "波特兰歌剧院：《爱之灵药》",
-      "description": "傅界童博士出演多尼采蒂喜歌剧中的内莫里诺一角，参与波特兰歌剧院巡回演出。",
-      "date": "",
-      "time": "",
-      "venue": "Portland Opera",
-      "link": "https://www.portlandopera.org/performances-tickets/25-26-season/portland-opera-to-go-the-elixir-of-love/"
+      "title": "中国音画：诗词中的声音与意境",
+      "description": "通过艺术歌曲、钢琴演奏与精心甄选的视觉意象，领略中国古典诗词的永恒之美——无需具备中国语言或文化背景。",
+      "date": "9 月 20 日",
+      "time": "下午 3 点",
+      "venue": "Messiah United Methodist Church, Springfield, VA",
+      "link": "https://www.instagram.com/p/DZ8KOd2j4KA/?igsh=MTJtdzRxNjEybjFycA=="
+    },
+    {
+      "title": "Boordy 葡萄园“首个周五”音乐之夜：携手马里兰歌剧院",
+      "description": "2026年10月2日，傅博士将与马里兰歌剧院（Maryland Opera）联袂在 Boordy 葡萄园演出，为您带来一场汇集歌剧、百老汇及更多风格经典曲目的美妙夜晚。您可以一边品尝美酒和当地餐车提供的美味佳肴，一边在草坪上悠闲休憩，在夕阳余晖的诗意背景下，尽情享受户外歌剧演出的魅力。",
+      "date": "2026年10月2日",
+      "time": "晚上 7 点",
+      "venue": "12820 Long Green Pike | Hydes, MD 21082",
+      "link": "https://www.marylandopera.org/upcoming-performances"
     }
   ]
 }
