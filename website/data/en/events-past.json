@@ -1,6 +1,17 @@
 {
   "events": [
     {
+      "title": "Alfredo - La Traviata (Act 1) / Rodolfo - La Bohème (Act 3)",
+      "year": "2026",
+      "venue": "Peabody Opera Theater"
+    },
+    {
+      "title": "Portland Opera To Go: The Elixir of Love",
+      "year": "2025",
+      "venue": "Portland Opera",
+      "link": "https://www.portlandopera.org/performances-tickets/25-26-season/portland-opera-to-go-the-elixir-of-love/"
+    },
+    {
       "title": "Tenor Soloist – Rachmaninoff's Vespers, Op. 37",
       "year": "2025",
       "venue": "Washington Master Chorale",
@@ -89,17 +100,6 @@
       "year": "2022",
       "venue": "Peabody Opera Workshop",
       "link": ""
-    },
-    {
-      "title": "Portland Opera To Go: The Elixir of Love",
-      "year": "2025",
-      "venue": "Portland Opera",
-      "link": "https://www.portlandopera.org/performances-tickets/25-26-season/portland-opera-to-go-the-elixir-of-love/"
-    },
-    {
-      "title": "Alfredo - La Traviata (Act 1) / Rodolfo - La Bohème (Act 3)",
-      "year": "2026",
-      "venue": "Peabody Opera Theater"
     }
   ]
 }
