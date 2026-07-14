@@ -108,13 +108,19 @@ function renderHome(site, bio) {
       .join('');
   }
   const bioWrap = document.getElementById('bio-text');
-  const downloadLinks = bioWrap ? bioWrap.querySelector('.download-links') : null;
-  if (bioWrap && downloadLinks && bio) {
+  const documentsBlock = bioWrap ? bioWrap.querySelector('.documents-block') : null;
+  if (bioWrap && bio) {
+    bioWrap.querySelectorAll(':scope > p.bio-paragraph').forEach((p) => p.remove());
     ['p1', 'p2', 'p3', 'p4', 'p5'].forEach((key) => {
       if (bio[key]) {
         const p = document.createElement('p');
+        p.className = 'bio-paragraph';
         p.textContent = bio[key];
-        bioWrap.insertBefore(p, downloadLinks);
+        if (documentsBlock) {
+          bioWrap.insertBefore(p, documentsBlock);
+        } else {
+          bioWrap.appendChild(p);
+        }
       }
     });
   }
