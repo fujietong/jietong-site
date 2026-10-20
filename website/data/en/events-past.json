@@ -1,6 +1,40 @@
 {
   "events": [
     {
+      "title": "Cabaret",
+      "year": "2026",
+      "date": "October 17, 2026",
+      "time": "4 PM",
+      "venue": "Messiah United Methodist Church, Springfield, VA",
+      "link": ""
+    },
+    {
+      "title": "The Making of Chinese Art Song — Lecture-Recital & Masterclass",
+      "description": "Dr. Jietong Fu, tenor, and Dr. Xin Wu, pianist, co-presented a lecture-recital and masterclass on Chinese art song. Through discussion, musical demonstrations, and performance, they explored Chinese poetry, Mandarin diction, musical traditions, and the singer–pianist partnership, followed by an interactive masterclass.",
+      "year": "2026",
+      "date": "October 15, 2026",
+      "venue": "Morgan State University, Baltimore, MD",
+      "link": ""
+    },
+    {
+      "title": "First Fridays at Boordy Vineyards with Maryland Opera",
+      "description": "On October 2, 2026, Dr. Fu joined Maryland Opera for an evening of favorites from opera, Broadway, and beyond at Boordy Vineyards.",
+      "date": "October 2, 2026",
+      "time": "7 PM",
+      "venue": "12820 Long Green Pike | Hydes, MD 21082",
+      "link": "https://www.marylandopera.org/upcoming-performances",
+      "year": "2026"
+    },
+    {
+      "title": "Sound and Image - A Musical Journey Through Classical Chinese Poetry",
+      "description": "Dr. Jietong Fu and Dr. Xin Wu presented the beauty of Classical Chinese poetry through art song, piano, and carefully curated imagery.",
+      "date": "September 20, 2026",
+      "time": "3 PM",
+      "venue": "Messiah United Methodist Church, Springfield, VA",
+      "link": "https://www.instagram.com/p/DZ8KOd2j4KA/?igsh=MTJtdzRxNjEybjFycA==",
+      "year": "2026"
+    },
+    {
       "title": "Alfredo - La Traviata (Act 1) / Rodolfo - La Bohème (Act 3)",
       "year": "2026",
       "venue": "Peabody Opera Theater"

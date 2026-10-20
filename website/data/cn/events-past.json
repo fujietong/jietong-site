@@ -1,6 +1,40 @@
 {
   "events": [
     {
+      "title": "Cabaret 音乐会",
+      "year": "2026",
+      "date": "2026 年 10 月 17 日",
+      "time": "下午 4 点",
+      "venue": "Messiah United Methodist Church, Springfield, VA",
+      "link": ""
+    },
+    {
+      "title": "中国艺术歌曲的形成——讲座音乐会暨大师班",
+      "description": "男高音傅界童博士与钢琴家吴欣博士共同主讲，通过讲解、音乐示范与演唱，探讨中国诗词、汉语咬字、音乐传统及歌者与钢琴家的合作，并通过互动大师班将相关理念运用于演唱实践。",
+      "year": "2026",
+      "date": "2026 年 10 月 15 日",
+      "venue": "摩根州立大学，美国马里兰州巴尔的摩",
+      "link": ""
+    },
+    {
+      "title": "Boordy 葡萄园“首个周五”音乐之夜：携手马里兰歌剧院",
+      "description": "2026 年 10 月 2 日，傅界童博士与马里兰歌剧院（Maryland Opera）联袂在 Boordy 葡萄园演出，呈现歌剧、百老汇及更多风格的经典曲目。",
+      "date": "2026年10月2日",
+      "time": "晚上 7 点",
+      "venue": "12820 Long Green Pike | Hydes, MD 21082",
+      "link": "https://www.marylandopera.org/upcoming-performances",
+      "year": "2026"
+    },
+    {
+      "title": "中国音画：诗词中的声音与意境",
+      "description": "傅界童博士与吴欣博士通过艺术歌曲、钢琴演奏与精心甄选的视觉意象，呈现中国古典诗词的永恒之美。",
+      "date": "2026 年 9 月 20 日",
+      "time": "下午 3 点",
+      "venue": "Messiah United Methodist Church, Springfield, VA",
+      "link": "https://www.instagram.com/p/DZ8KOd2j4KA/?igsh=MTJtdzRxNjEybjFycA==",
+      "year": "2026"
+    },
+    {
       "title": "男高音独唱 – 拉赫玛尼诺夫《晚祷》Op. 37",
       "year": "2025",
       "venue": "华盛顿合唱团（Washington Master Chorale）",

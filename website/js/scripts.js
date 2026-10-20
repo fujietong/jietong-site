@@ -160,8 +160,10 @@ function renderEvents(site, upcoming, past) {
     pastWrap.innerHTML = past.events.map(e => `
       <article class="show-card">
         <h3>${escapeHtml(e.title)}</h3>
+        ${e.description ? `<p>${escapeHtml(e.description)}</p>` : ''}
         <p class="event-meta">
-          ${e.year ? `${escapeHtml(e.year)}<br/>` : ''}
+          ${e.date || e.year ? `${escapeHtml(e.date || e.year)}<br/>` : ''}
+          ${e.time ? `${escapeHtml(labels.time_label || 'Time')}: ${escapeHtml(e.time)}<br/>` : ''}
           ${e.venue ? `${escapeHtml(e.venue)}` : ''}
         </p>
         ${e.link ? `<a href="${escapeHtml(e.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(labels.details_label || 'Details')}</a>` : ''}
