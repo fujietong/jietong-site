@@ -1,8 +1,16 @@
 {
   "videos": [
-    { "title": "Una furtiva lagrima", "url": "https://youtu.be/g7gorh1vmCI" },
-    { "title": "Com'è gentil", "url": "https://youtu.be/ilMlZ0J1U_0" },
-    { "title": "Outside this House", "url": "https://youtu.be/ZWkxfYz-vXU" },
-    { "title": "海恋 (Love of the Sea)", "url": "https://youtu.be/5wfwJIvlATk" }
+    {
+      "title": "Asile héréditaire",
+      "url": "https://youtu.be/rLZY35TRVD8"
+    },
+    {
+      "title": "Dies Bildnis ist bezaubernd schön",
+      "url": "https://youtu.be/hgUMHg7TOAE"
+    },
+    {
+      "title": "Outside This House",
+      "url": "https://youtu.be/mP9Vy4VumD8"
+    }
   ]
 }
