@@ -17,6 +17,11 @@
       "platform": "tiktok",
       "url": "https://www.tiktok.com/@jietongfu?_t=ZP-8yk0rfDh2Ux&_r=1",
       "label": "TikTok"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/jietongfutenor",
+      "label": "X"
     }
   ],
   "home": {

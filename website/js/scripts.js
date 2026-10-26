@@ -19,6 +19,7 @@ function youtubeIdFromUrl(url = '') {
 function socialIconMarkup(platform, label) {
   const safe = escapeHtml(label || platform);
   const map = {
+    x: `<i class="fa-brands fa-x-twitter"></i>`,
     facebook: `<i class="fa-brands fa-facebook-f"></i>`,
     instagram: `<i class="fa-brands fa-instagram"></i>`,
     tiktok: `<i class="fa-brands fa-tiktok"></i>`,

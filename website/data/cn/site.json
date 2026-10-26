@@ -12,6 +12,11 @@
       "platform": "xiaohongshu",
       "url": "https://www.xiaohongshu.com/user/profile/6497d550000000001003426b?xsec_token=YBJM7eJvesroUox0bfLb0Wg-YcKr0iqOwcj3i5PrCfhl8%3D&xsec_source=app_share&xhsshare=CopyLink&appuid=6497d550000000001003426b&apptime=1754768024&share_id=e971759b7b474e8dbb39e472d2da5ec9&share_channel=copy_link",
       "label": "小红书"
+    },
+    {
+      "platform": "x",
+      "url": "https://x.com/jietongfutenor",
+      "label": "X"
     }
   ],
   "home": {
